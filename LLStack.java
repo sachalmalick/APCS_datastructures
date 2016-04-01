@@ -14,8 +14,8 @@ public class LLStack<T> implements Stack<T> {
     private int _stackSize;
     
  
-	public LLStack(int size) {
-		_stack = new LinkedList();
+	public LLStack() {
+		_stack = new LinkedList<T>();
 		_stackSize = 0;
 	}
 
@@ -27,20 +27,23 @@ public class LLStack<T> implements Stack<T> {
 
 	@Override
 	public T peek() {
-		// TODO Auto-generated method stub
-		return null;
+		if (isEmpty()) return null;
+		return _stack.get(_stackSize-1);
 	}
 
 	@Override
 	public T pop() {
-		// TODO Auto-generated method stub
-		return null;
+		if (isEmpty()) return null;
+		T temp = peek();
+		_stack.remove(_stackSize-1);
+		_stackSize--;
+		return temp;
 	}
 
 	@Override
 	public void push(T x) {
-		// TODO Auto-generated method stub
-		
+		_stack.add(x);
+		_stackSize++;
 	}
 
     //main method for testing
@@ -49,7 +52,6 @@ public class LLStack<T> implements Stack<T> {
 	Stack<String> tastyStack = new LLStack<String>();
 
 	tastyStack.push("aoo");
-	tastyStack.push("boo");
 	tastyStack.push("coo");
 	tastyStack.push("doo");
 	tastyStack.push("eoo");
