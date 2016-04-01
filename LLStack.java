@@ -10,8 +10,38 @@ import java.util.LinkedList;
 
 public class LLStack<T> implements Stack<T> {
 
+	LinkedList <T> _stack;
+    private int _stackSize;
+    
+ 
+	public LLStack(int size) {
+		_stack = new LinkedList();
+		_stackSize = 0;
+	}
 
+	@Override
+	public boolean isEmpty() {
+		
+		return _stackSize == 0; 
+	}
 
+	@Override
+	public T peek() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public T pop() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void push(T x) {
+		// TODO Auto-generated method stub
+		
+	}
 
     //main method for testing
     public static void main( String[] args ) {
@@ -73,5 +103,7 @@ public class LLStack<T> implements Stack<T> {
 	System.out.println( "pop: " + tastyStack.pop() );
 	System.out.println( tastyStack.pop() );
     }//end main()
+
+
 
 }//end class LLStack
