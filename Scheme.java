@@ -15,7 +15,9 @@
       3. Add all operands to a stack
       4. Keep track of open parens with a counter
       5. Once you hit an operator, find its respective operands using the counter
-      6. Complete after one traverse
+      6. Combine the operands with the operator correctly
+      7. Rinse and repeat- but no recursion
+      8. Complete after one traverse, return the last element in the stack
       *
       * STACK OF CHOICE: LLStack by sachal with minor tweaks by kyle
       * b/c it is simple and clean
@@ -37,19 +39,14 @@ public class Scheme {
     {
         Stack<String> nums = new LLStack<String>();
         int counter = 0;
-
         String[] queue = expr.split(" ");
-
         for (int i = queue.length - 1; i >= 1; i--)
         {
             String s = queue[i];
-
             if (s.equals("("))
                 continue;
-
             if (s.equals(")"))
                 counter = 0;
-
             else if (isNumber(s))
             {
                 counter += 1;
@@ -98,7 +95,6 @@ public class Scheme {
             return false;
         }
     }
-
 
     //main method for testing
     public static void main( String[] args ) {
