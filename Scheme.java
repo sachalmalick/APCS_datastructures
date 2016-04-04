@@ -35,10 +35,39 @@ public class Scheme {
      ******************************************************/
     public static String unload( int op, Stack<String> numbers ) 
     {
-    }//end unload()
+    	int start = Integer.parseInt(numbers.peek());
+    	
+    	if (op == 1) {
+    	while (!numbers.peek().equals(")")) {
+    		if (isNumber(numbers.peek())) {
+    			int temp = Integer.parseInt(numbers.peek());
+    			start+=temp;
+    		}
+    	}
+    	}
+    	if (op == 2) {
+        	while (!numbers.peek().equals(")")) {
+        		if (isNumber(numbers.peek())) {
+        			int temp = Integer.parseInt(numbers.peek());
+        			start-=temp;
+        		}
+        	}
+        	}
+    	if (op == 3) {
+        	while (!numbers.peek().equals(")")) {
+        		if (isNumber(numbers.peek())) {
+        			int temp = Integer.parseInt(numbers.peek());
+        			start*=temp;
+        		}
+        	}
+        	}
+    	return start + "";
+    	
+    	
+    }
 
 
-    /*
+    
     //optional check-to-see-if-its-a-number helper fxn:
     public static boolean isNumber( String s ) {
         try {
@@ -49,7 +78,7 @@ public class Scheme {
 	    return false;
 	}
     }
-    */
+    
 
 
     //main method for testing
