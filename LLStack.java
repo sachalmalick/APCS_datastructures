@@ -28,7 +28,6 @@ public class LLStack<T> implements Stack<T> {
 
     @Override
     public boolean isEmpty() {
-
         return _stackSize == 0;
     }
 
@@ -51,6 +50,11 @@ public class LLStack<T> implements Stack<T> {
     public void push(T x) {
         _stack.add(x);
         _stackSize++;
+    }
+
+    @Override
+    public int size() {
+        return _stackSize;
     }
 
     //main method for testing
