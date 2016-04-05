@@ -24,4 +24,4 @@ public interface Queue<Quasar> {
     //~~~~~~~~~~~~~~~~~~~end AP subset~~~~~~~~~~~~~~~~~~~
 
 
-}//end interface Queue                                                                                           
+}//end interface Queue

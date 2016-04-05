@@ -56,7 +56,7 @@ public class LLNode<T> {
 	//Create a third node after the second
 	first.getNext().setNext( new LLNode<String>( "cow", null ) );
 
-	LLNode temp = first; 
+	LLNode temp = first;
 	while( temp != null ) {
 	    System.out.println( temp );
 	    temp = temp.getNext();

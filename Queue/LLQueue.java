@@ -25,14 +25,25 @@ public class LLQueue<T> implements Queue<T> {
 
     // default constructor creates an empty queue
     public LLQueue()
- {
-
+    {
+        _front = null;
+        _end = null;
     }
 
     // means of adding a thing to the collection
     public void enqueue( T enQVal )
-{
-
+    {
+        LLNode temp = new LLNode<T>(enQVal, null);
+        if (this.isEmpty())
+        {
+            _front = temp;
+            _end = temp;
+        }
+        else
+        {
+            _end.setNext(temp);
+            _end = temp;
+        }
     }//O(?)
 
 
@@ -40,54 +51,63 @@ public class LLQueue<T> implements Queue<T> {
     // remove and return thing at front of queue
     // assume _queue ! empty
     public T dequeue()
-{
-
+    {
+        if (this.isEmpty())
+        {
+            System.out.println("***Cannot dequeue from empty queue***");
+            return null;
+        }
+        T retV = _front.getValue();
+        _front = _front.getNext();
+        return retV;
     }//O(?)
 
 
     // means of peeking at thing next in line for removal
     public T peekFront()
-{
-
+    {
+        T retV = _front.getValue();
+        return retV;
     }//O(?)
 
 
     public boolean isEmpty()
-{
-
+    {
+        return _front == null;
     }//O(?)
 
 
     // print each node, separated by spaces
     public String toString()
-{
-
+    {
+        String retS = "";
+        LLNode<T> temp = _front;
+        while (temp != null)
+        {
+            retS += temp + " ";
+            temp = temp.getNext();
+        }
+        return retS;
     }//O(?)
 
+    public static void main( String[] args )
+    {
+       Queue<String> LLQueuelJ = new LLQueue<String>();
+       System.out.println("\nnow enqueuing thrice...");
+       LLQueuelJ.enqueue("James");
+       LLQueuelJ.enqueue("Todd");
+       LLQueuelJ.enqueue("Smith");
 
+       System.out.println("\nnow testing toString()...");
+	   System.out.println( LLQueuelJ ); //for testing toString()...
 
-    public static void main( String[] args ) {
+	   System.out.println("\nnow dequeuing thrice...");
+	   System.out.println( LLQueuelJ.dequeue() );
+	   System.out.println( LLQueuelJ.dequeue() );
+	   System.out.println( LLQueuelJ.dequeue() );
 
-	/*v~~~~~~~~~~~~~~MAKE MORE~~~~~~~~~~~~~~v
-	Queue<String> LLQueuelJ = new LLQueue<String>();
-
-	System.out.println("\nnow enqueuing thrice...");
-	LLQueuelJ.enqueue("James");
-	LLQueuelJ.enqueue("Todd");
-	LLQueuelJ.enqueue("Smith");
-
-	System.out.println("\nnow testing toString()...");
-	System.out.println( LLQueuelJ ); //for testing toString()...
-
-	System.out.println("\nnow dequeuing thrice...");
-	System.out.println( LLQueuelJ.dequeue() );
-	System.out.println( LLQueuelJ.dequeue() );
-	System.out.println( LLQueuelJ.dequeue() );
-
-	System.out.println("\nDequeuing from empty queue should yield error...");
-	System.out.println( LLQueuelJ.dequeue() );
-	  ^~~~~~~~~~~~~~~~AWESOME~~~~~~~~~~~~~~~^*/
-
+	   System.out.println("\nDequeuing from empty queue should yield error...");
+	   System.out.println( LLQueuelJ.dequeue() );
     }//end main
-
+    
 }//end class LLQueue
