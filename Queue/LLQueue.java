@@ -1,3 +1,10 @@
+/*
+  Team: Over the Moon -- Sachal Malick, Kyle Moon
+  APCS2 PD10
+  HW25 -- Brits Do Not Wait in Line
+  2016-04-05
+*/
+
 /*****************************************************
  * class LLQueue
  * uses a linked list to implement a QUEUE
@@ -18,12 +25,12 @@ public class LLQueue<T> implements Queue<T> {
 
     // default constructor creates an empty queue
     public LLQueue()
- { 
+ {
 
     }
 
     // means of adding a thing to the collection
-    public void enqueue( T enQVal ) 
+    public void enqueue( T enQVal )
 {
 
     }//O(?)
@@ -32,28 +39,28 @@ public class LLQueue<T> implements Queue<T> {
     // means of removing a thing from the collection
     // remove and return thing at front of queue
     // assume _queue ! empty
-    public T dequeue() 
-{ 
-
-    }//O(?)
-
-
-    // means of peeking at thing next in line for removal
-    public T peekFront() 
+    public T dequeue()
 {
 
     }//O(?)
 
 
-    public boolean isEmpty() 
+    // means of peeking at thing next in line for removal
+    public T peekFront()
+{
+
+    }//O(?)
+
+
+    public boolean isEmpty()
 {
 
     }//O(?)
 
 
     // print each node, separated by spaces
-    public String toString() 
-{ 
+    public String toString()
+{
 
     }//O(?)
 
@@ -64,20 +71,20 @@ public class LLQueue<T> implements Queue<T> {
 	/*v~~~~~~~~~~~~~~MAKE MORE~~~~~~~~~~~~~~v
 	Queue<String> LLQueuelJ = new LLQueue<String>();
 
-	System.out.println("\nnow enqueuing thrice..."); 
+	System.out.println("\nnow enqueuing thrice...");
 	LLQueuelJ.enqueue("James");
 	LLQueuelJ.enqueue("Todd");
 	LLQueuelJ.enqueue("Smith");
 
-	System.out.println("\nnow testing toString()..."); 
+	System.out.println("\nnow testing toString()...");
 	System.out.println( LLQueuelJ ); //for testing toString()...
 
-	System.out.println("\nnow dequeuing thrice..."); 
+	System.out.println("\nnow dequeuing thrice...");
 	System.out.println( LLQueuelJ.dequeue() );
 	System.out.println( LLQueuelJ.dequeue() );
 	System.out.println( LLQueuelJ.dequeue() );
 
-	System.out.println("\nDequeuing from empty queue should yield error..."); 
+	System.out.println("\nDequeuing from empty queue should yield error...");
 	System.out.println( LLQueuelJ.dequeue() );
 	  ^~~~~~~~~~~~~~~~AWESOME~~~~~~~~~~~~~~~^*/
 

@@ -1,3 +1,10 @@
+/*
+  Team: Over the Moon -- Sachal Malick, Kyle Moon
+  APCS2 PD10
+  HW26 -- Nor Do Aussies
+  2016-04-05
+*/
+
 /*****************************************************
  * class ALQueue
  * uses an ArrayList to implement abstract data type QUEUE
@@ -17,19 +24,19 @@ public class ALQueue<T> implements Queue<T> {
     private ArrayList<T> _queue;
 
     // default constructor
-    public ALQueue() 
-	{ 
+    public ALQueue()
+	{
     	_queue = new ArrayList<T>();
 	}
 
-    // means of adding an item to collection 
+    // means of adding an item to collection
     public void enqueue( T x )
     {
     	_queue.add(x);
     }//O(?)
 
 
-    // means of removing an item from collection 
+    // means of removing an item from collection
     public T dequeue()
     {
     	if (_queue.isEmpty()) {
@@ -43,7 +50,7 @@ public class ALQueue<T> implements Queue<T> {
 
 
     // means of "peeking" at the front item
-    public T peekFront() 
+    public T peekFront()
     {
     	return _queue.get(0);
 
@@ -57,7 +64,7 @@ public class ALQueue<T> implements Queue<T> {
     }//O(?)
 
 
-    public String toString() 
+    public String toString()
     {
     	String rs = "";
     	for (T a : _queue) {
@@ -72,20 +79,20 @@ public class ALQueue<T> implements Queue<T> {
 
 	Queue<String> ALBSure = new ALQueue<String>();
 
-	System.out.println("\nnow enqueuing thrice..."); 
+	System.out.println("\nnow enqueuing thrice...");
 	ALBSure.enqueue("Al");
 	ALBSure.enqueue("B.");
 	ALBSure.enqueue("Sure!");
 
-	System.out.println("\nnow testing toString()..."); 
+	System.out.println("\nnow testing toString()...");
 	System.out.println( ALBSure ); //for testing toString()...
 
-	System.out.println("\nnow dequeuing thrice..."); 
+	System.out.println("\nnow dequeuing thrice...");
 	System.out.println( ALBSure.dequeue() );
 	System.out.println( ALBSure.dequeue() );
 	System.out.println( ALBSure.dequeue() );
 
-	System.out.println("\nDequeuing from empty queue should yield error..."); 
+	System.out.println("\nDequeuing from empty queue should yield error...");
 	System.out.println( ALBSure.dequeue() );
 
     }//end main
